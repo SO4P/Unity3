@@ -1,13 +1,26 @@
 # 1、操作与总结
 + 参考 Fantasy Skybox FREE 构建自己的游戏场景
     + 在Assert Store下载资源，并利用地形工具进行修改
+    ![scene](https://github.com/SO4P/Unity3/blob/master/3.2.png)
 + 写一个简单的总结，总结游戏对象的使用
+    + 游戏对象：
+        + Empty：
+        最常用却不显示的对象
+        + Audio：
+        声音
+        + Camera：
+        玩家观察的摄像机
+        + Light：
+        光源
+        + Object：
+        用于构建场景的物体
 # 2、编程实践
 + 在上次作业的基础上，参考了老师提供的博客的代码进行更改，维持了原有的功能：
     + 游戏结束后不接受用户输入，除了restart
     + 可以自定义priest和devil的数量，数量和最大为12
     + 物体移动可见移动轨迹
 + UML类图：
+![UML](https://github.com/SO4P/Unity3/blob/master/3.1.png)
 + 代码：
     + 动作的基类和事件回调接口：
 
@@ -78,7 +91,6 @@
                         if (!move)
                         {
                             sceneController.find = 0;
-                            sceneController.gameStatus();
                             this.destroy = true;
                             this.callback.SSActionEvent(this);
                         }
@@ -184,6 +196,7 @@
                     }
                     else
                     {
+                        sceneController.gameStatus();
                         this.destroy = true;
                         this.callback.SSActionEvent(this);
                     }
@@ -619,3 +632,6 @@
                 }
 
             }
+    + 演示视频
+    由于大小关系进行了压缩，解压名为“演示视频.zip”即可
+    	
